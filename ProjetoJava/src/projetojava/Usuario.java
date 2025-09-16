@@ -40,6 +40,24 @@ public class Usuario {
     public void setCarteira(double carteira) {
         this.carteira = carteira;
     }
+    
+    
+    
+    public void comprarJogo(){
+    
+    }
+    
+    public void baixarjogo(){
+    
+    
+    }
+    
+    public void adicionarFundos(){
+    
+    
+    
+    
+    }
      
      
      
