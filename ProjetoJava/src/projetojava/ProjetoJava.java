@@ -22,6 +22,13 @@ public class ProjetoJava {
         System.out.println("4 - Relatorios");
         System.out.println("5 - Sair");
         op = entrada.nextInt();
+        if(op < 0 && op > 5){
+            System.out.println("Opcao invalida!!");
+            return;
+        }
+       
+        
+        
     }while(op != 5);
     
     
