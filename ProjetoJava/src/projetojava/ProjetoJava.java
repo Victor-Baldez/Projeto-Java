@@ -6,13 +6,15 @@ public class ProjetoJava {
 
     public static void main(String[] args) {
         
-        
+        menu();
         
     }
     
     
-    public void menu(){
+    public static void menu(){
         int op;
+        Jogo jogo = new Jogo();
+        Categoria categoria = new Categoria();
         do{
         Scanner entrada = new Scanner(System.in);
         System.out.println("Bem Vindo!!/n");
@@ -25,10 +27,21 @@ public class ProjetoJava {
         if(op < 0 && op > 5){
             System.out.println("Opcao invalida!!");
             return;
+        }else{
+            
+            if (op == 1){
+                categoria = new Categoria();
+                categoria.cadastrarCategoria();
+                Categoria.categorias.add(categoria);
+            }
+            if(op == 2){
+                //lista as categorias
+                //a pessoa digita o codigo referente a categoria
+                //vc acha o nome
+                //cadastra o jogo passando como parametro a categoria
+                jogo.cadastrarJogo();
+            }
         }
-       
-        
-        
     }while(op != 5);
     
     
