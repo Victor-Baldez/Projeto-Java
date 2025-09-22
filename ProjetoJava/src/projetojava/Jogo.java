@@ -7,7 +7,7 @@ import java.util.Scanner;
 public class Jogo {
     
     
-    private ArrayList<Jogo> ListaJogo = new ArrayList<>();
+    private static ArrayList<Jogo> listaJogos = new ArrayList<>();
     private int id;
     private String titulo;
     private String descricao;
@@ -16,27 +16,25 @@ public class Jogo {
     private String desenvolvedora;
 
     public void cadastrarJogo(){
+        Jogo jogo = new Jogo();
         Scanner entrada = new Scanner(System.in);
         System.out.println("Painel de Cadastro");
         System.out.println("Titulo do jogo:");
-        setTitulo(entrada.next());
+        jogo.setTitulo(entrada.nextLine());
         System.out.println("Descricao:");
-        setDescricao(entrada.next());
+        jogo.setDescricao(entrada.nextLine());
         System.out.println("Desenvolvedor:");
-        setDesenvolvedora(entrada.next());
+        jogo.setDesenvolvedora(entrada.nextLine());
         System.out.println("Data de lançamento:");
-        setDataLancamento(entrada.next());
+        jogo.setDataLancamento(entrada.nextLine());
         System.out.println("Preço:");
-        setPreco(entrada.nextDouble());
+        jogo.setPreco(entrada.nextDouble());
+        entrada.nextLine();
+        listaJogos.add(jogo);
+        System.out.println("Jogo Adicionado com Sucesso!!!");
+        
     }
 
-    public ArrayList<Jogo> getListaJogo() {
-        return ListaJogo;
-    }
-
-    public void setListaJogo(ArrayList<Jogo> ListaJogo) {
-        this.ListaJogo = ListaJogo;
-    }
 
     public int getId() {
         return id;

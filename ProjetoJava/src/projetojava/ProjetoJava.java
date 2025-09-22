@@ -6,8 +6,7 @@ public class ProjetoJava {
 
     public static void main(String[] args) {
         
-        menu();
-        
+        menu(); 
     }
     
     
@@ -34,17 +33,16 @@ public class ProjetoJava {
                 categoria.cadastrarCategoria();
                 Categoria.categorias.add(categoria);
             }
-            if(op == 2){
-                //lista as categorias
-                //a pessoa digita o codigo referente a categoria
-                //vc acha o nome
-                //cadastra o jogo passando como parametro a categoria
+            else if(op == 2){
                 jogo.cadastrarJogo();
             }
         }
     }while(op != 5);
     
-    
+    //lista as categorias
+                //a pessoa digita o codigo referente a categoria
+                //vc acha o nome
+                //cadastra o jogo passando como parametro a categoria
     
     }
     
