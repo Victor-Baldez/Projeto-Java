@@ -14,11 +14,37 @@ public class Jogo {
     private double preco;
     private String dataLancamento;
     private String desenvolvedora;
+    private Categoria categoria;
 
     public void cadastrarJogo(){
+        if (Categoria.categorias.isEmpty()) {
+            System.out.println("Nao existem categorias cadastradas!");
+            System.out.println("Cadastre pelo menos uma categoria antes de cadastrar um jogo.");
+            return;
+        }
         Jogo jogo = new Jogo();
         Scanner entrada = new Scanner(System.in);
         System.out.println("Painel de Cadastro");
+        System.out.println("\nCategorias disponíveis:");
+        Categoria.listarCategorias();
+        
+        Categoria categoriaSelecionada = null;//alguns bugs para ser resolvido ainda nao ta 100%
+        while (categoriaSelecionada == null) {
+            System.out.println("Digite o codigo da categoria:");
+            if (entrada.hasNextInt()) {
+                int codigoCategoria = entrada.nextInt();
+                entrada.nextLine(); 
+                categoriaSelecionada = Categoria.buscarCategoriaPorCodigo(codigoCategoria);
+                if (categoriaSelecionada == null) {
+                    System.out.println("Codigo invalido! tente novamente.");
+                    System.out.println("Categorias disponíveis:");
+                    Categoria.listarCategorias();
+                }
+            } else {
+                System.out.println("digite um numero valido!");
+                entrada.nextLine(); 
+            }
+        }
         System.out.println("Titulo do jogo:");
         jogo.setTitulo(entrada.nextLine());
         System.out.println("Descricao:");
@@ -32,6 +58,7 @@ public class Jogo {
         entrada.nextLine();
         listaJogos.add(jogo);
         System.out.println("Jogo Adicionado com Sucesso!!!");
+        //tem que fazer a logica para adicionar o id ainda
         
     }
 

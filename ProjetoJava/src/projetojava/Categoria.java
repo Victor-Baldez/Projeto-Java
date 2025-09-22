@@ -36,6 +36,26 @@ public class Categoria {
          System.out.println("Categoria cadastrada cojm sucesso!");
     }
      
+     public static void listarCategorias() {
+        if (categorias.isEmpty()) {
+            System.out.println("Nenhuma categoria cadastrada.");
+        } else {
+            System.out.println("CATEGORIAS CADASTRADAS");
+            for (Categoria cat : categorias) {
+                System.out.println(cat.getCodigo() + " - " + cat.getNome());
+            }
+        }
+    }
+     //ta meio bugado essa funcao, nao sei pq ainda
+     public static Categoria buscarCategoriaPorCodigo(int codigo) {
+        for (Categoria cat : categorias) {
+            if (cat.getCodigo() == codigo) {
+                return cat;
+            }
+        }
+        return null;
+    }
+     
     public void gerarCodigo(){
         int ultimaPos;
         int ultimoCod = 0;
