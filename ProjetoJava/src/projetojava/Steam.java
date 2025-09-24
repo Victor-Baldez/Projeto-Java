@@ -2,7 +2,7 @@
 package projetojava;
 import java.util.Scanner;
 
-public class ProjetoJava {
+public class Steam {
 
     public static void main(String[] args) {
         
@@ -19,9 +19,9 @@ public class ProjetoJava {
         System.out.println("Bem Vindo!!/n");
         System.out.println("1 - Cadastrar categoria");
         System.out.println("2 - Cadastrar Jogos");
-        System.out.println("5 - Sair");
+        System.out.println("3 - Sair");
         op = entrada.nextInt();
-        if(op < 0 && op > 5){
+        if(op < 0 && op > 3){
             System.out.println("Opcao invalida!!");
             return;
         }else{
@@ -36,12 +36,8 @@ public class ProjetoJava {
                 jogo.cadastrarJogo();
             }
         }
-    }while(op != 5);
+    }while(op != 3);
     
-    //lista as categorias
-                //a pessoa digita o codigo referente a categoria
-                //vc acha o nome
-                //cadastra o jogo passando como parametro a categoria
     
     }
     
