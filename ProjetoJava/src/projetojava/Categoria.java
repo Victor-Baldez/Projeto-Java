@@ -33,7 +33,7 @@ public class Categoria {
         Scanner entrada = new Scanner(System.in);
         System.out.println("Nome da categoria:");
         setNome(entrada.next());
-         System.out.println("Categoria cadastrada cojm sucesso!");
+         System.out.println("Categoria cadastrada com sucesso!");
     }
      
      public static void listarCategorias() {
