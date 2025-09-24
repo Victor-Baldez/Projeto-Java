@@ -12,7 +12,7 @@ public class ProjetoJava {
     
     public static void menu(){
         int op;
-        Jogo jogo = new Jogo();
+        
         Categoria categoria = new Categoria();
         do{
         Scanner entrada = new Scanner(System.in);
@@ -34,6 +34,7 @@ public class ProjetoJava {
                 Categoria.categorias.add(categoria);
             }
             else if(op == 2){
+                Jogo jogo = new Jogo();
                 jogo.cadastrarJogo();
             }
         }
