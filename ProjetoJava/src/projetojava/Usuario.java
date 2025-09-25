@@ -47,15 +47,8 @@ public class Usuario {
     
     }
     
-    public void baixarjogo(){
-    
-    
-    }
     
     public void adicionarFundos(){
-    
-    
-    
     
     }
      
