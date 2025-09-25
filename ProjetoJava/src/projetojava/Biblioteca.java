@@ -1,10 +1,11 @@
 package projetojava;
 
-import java.util.List;
+import java.util.ArrayList;
+
 
 public class Biblioteca {
     private int usuarioId;
-    private List Jogosadquiridos; /* vai ser arrayList no futuro. */
+    private static ArrayList<Biblioteca> JogosAdquiridos = new ArrayList<>();
 
     public int getUsuarioId() {
         return usuarioId;
@@ -14,13 +15,7 @@ public class Biblioteca {
         this.usuarioId = usuarioId;
     }
 
-    public List getJogosadquiridos() {
-        return Jogosadquiridos;
-    }
-
-    public void setJogosadquiridos(List Jogosadquiridos) {
-        this.Jogosadquiridos = Jogosadquiridos;
-    }
+   
     
     
     public void adicionarJogo(){
