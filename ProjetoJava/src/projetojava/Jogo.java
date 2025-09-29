@@ -82,7 +82,7 @@ public class Jogo {
         System.out.println("Digite o titulo do jogo: ");
         setTitulo(entrada.nextLine());
         
-        System.out.println("Digite a descrição do jogo: ");
+        System.out.println("Digite a descricao do jogo: ");
         setDescricao(entrada.nextLine());
         
         System.out.println("Digite o preco do jogo: ");
@@ -94,6 +94,7 @@ public class Jogo {
         
         System.out.println("Digite a data de lançamento (formato dd/MM/yyyy): ");
         String dataStr = entrada.nextLine();
+        //vi no canal do gustavo guanabara esse metodo de validar a data meio complicado mas mais eficiente
         try {
             Date data = new java.text.SimpleDateFormat("dd/MM/yyyy").parse(dataStr);
             // aqui ele pega a string dataStr e tenta transformar num date usando o formato dia/mês/ano tipo 25/12/2025
@@ -105,13 +106,14 @@ public class Jogo {
             // pra não parar tudo coloca a data atual agora como valor padrão
         }
         
+        
+        //ta bugado na hora de selecionar a categoria nao conseguir fazer funcionar :(
         System.out.println("Selecionar categoria:");
-        categoria.listarCategorias();
+        categoria.listarCategorias(); // tenho quase certeza que estou fazendo isso errado
         if (!Categoria.categorias.isEmpty()) { 
     // verifica se a lista de categorias mão está vazia porque né, pedir código sem ter nada seria meio triste kkkk
 
     System.out.println("Digite o código da categoria: "); 
-    // pede pro usuário informar qual categoria ele quer
 
     int codigoCategoria = entrada.nextInt(); 
     for (int i = 0; i < Categoria.categorias.size(); i++) {
@@ -120,7 +122,7 @@ public class Jogo {
             setCategoria(Categoria.categorias.get(i)); 
             // então essa é a escolhida define ela aqui
             break; 
-            // e já sai do loop porque achou o que queria, sem enrolação
+            // e já sai do loop porque achou o que queria
         }
     }
     } 
