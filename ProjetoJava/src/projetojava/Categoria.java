@@ -6,7 +6,7 @@ import java.util.Scanner;
 
 
 public class Categoria {
-    
+    Scanner entrada = new Scanner(System.in);
     public static ArrayList<Categoria> categorias = new ArrayList<>();
     
     private int codigo;
@@ -29,8 +29,6 @@ public class Categoria {
     }
      
     public void cadastrarCategoria(){
-        Scanner entrada = new Scanner(System.in);
-
         gerarCodigo();
         System.out.println("Digite o nome da categoria: ");
         setNome(entrada.next());
@@ -62,8 +60,9 @@ public class Categoria {
         int proxCod = ultimoCod+1;
         setCodigo(proxCod);
     }
-    
-     /* public static String selecionarCat(){
+    /*
+    public String selecionarCat(){
+        Scanner entrada = new Scanner(System.in);
         String catSel = "";
         System.out.println("Selecione o código da categoria");
         for (int i = 0; i < Categoria.categorias.size(); i++) {
@@ -78,15 +77,6 @@ public class Categoria {
         }
         
         return catSel;
-        
-        
-        
     }*/
     
-    
-    
-    
-    
-    
-    
-}
+}    
