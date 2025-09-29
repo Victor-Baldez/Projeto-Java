@@ -29,7 +29,12 @@ public class Categoria {
     }
      
     public void cadastrarCategoria(){
-    
+        Scanner entrada = new Scanner(System.in);
+
+        gerarCodigo();
+        System.out.println("Digite o nome da categoria: ");
+        setNome(entrada.next());
+        System.out.println("Categoria cadastrada com sucesso!");
     
     }
     
