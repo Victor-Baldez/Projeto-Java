@@ -38,7 +38,7 @@ public class Categoria {
     
     }
     
-    public static void listarCategorias(){
+    public void listarCategorias(){
     if(categorias.isEmpty()){
         System.out.println("Nenhuma categoria cadastrada!");
     }else{

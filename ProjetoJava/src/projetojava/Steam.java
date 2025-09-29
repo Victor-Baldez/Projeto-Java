@@ -20,12 +20,13 @@ public class Steam {
             System.out.println("- Bem Vindo -\n");
             System.out.println("1 - Cadastrar categoria: ");
             System.out.println("2 - Cadastrar Jogos: ");
+            System.out.println("3 - Lista Categorias:");
             System.out.println("<------------->");
-            System.out.println("3 - Sair: ");
+            System.out.println("4 - Sair: ");
             op = entrada.nextInt();
         
         
-        if(op < 0 || op > 6){
+        if(op < 0 || op > 4){
             System.out.println("Opcao invalida!!");
             return;
         }else if (op == 1){
@@ -36,19 +37,14 @@ public class Steam {
             jogo = new Jogo();
             jogo.cadastrarJogo();
             Jogo.listaJogos.add(jogo);
+        }else if(op == 3){
+            categoria.listarCategorias();
         }   
             
-        }while(op != 3);
+        }while(op != 4);
     }        
 }
-    //lista as categorias
-        //a pessoa digita o codigo referente a categoria
-        //vc acha o nome
-        //cadastra o jogo passando como parametro a categoria
+
     
-    // tem que arrumar isso pra poder selecionar categoria
-    //*acho que tem que colocar dentro do main*
-    // pra rodar certinho tem que comentar essa parte kkkkk!
-    /*
-    */
+    
 
