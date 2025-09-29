@@ -8,7 +8,7 @@ import java.util.Scanner;
 public class Jogo {
     
     
-    private static ArrayList<Jogo> listaJogos = new ArrayList<>();
+    public static ArrayList<Jogo> listaJogos = new ArrayList<>();
     private int id;
     private String titulo;
     private String descricao;
