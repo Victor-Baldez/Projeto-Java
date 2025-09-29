@@ -25,7 +25,7 @@ public class Steam {
             op = entrada.nextInt();
         
         
-        if(op < 0 && op > 6){
+        if(op < 0 || op > 6){
             System.out.println("Opcao invalida!!");
             return;
         }else if (op == 1){
