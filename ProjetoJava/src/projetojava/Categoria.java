@@ -27,35 +27,12 @@ public class Categoria {
     public void setNome(String nome) {
         this.nome = nome;
     }
+     
+    public void cadastrarCategoria(){
     
-     public void cadastrarCategoria(){
-         gerarCodigo();
-        Scanner entrada = new Scanner(System.in);
-        System.out.println("Nome da categoria:");
-        setNome(entrada.next());
-         System.out.println("Categoria cadastrada com sucesso!");
+    
     }
-     
-     public static void listarCategorias() {
-        if (categorias.isEmpty()) {
-            System.out.println("Nenhuma categoria cadastrada.");
-        } else {
-            System.out.println("CATEGORIAS CADASTRADAS");
-            for (Categoria cat : categorias) {
-                System.out.println(cat.getCodigo() + " - " + cat.getNome());
-            }
-        }
-    }
-     //ta meio bugado essa funcao, nao sei pq ainda
-     public static Categoria buscarCategoriaPorCodigo(int codigo) {
-        for (Categoria cat : categorias) {
-            if (cat.getCodigo() == codigo) {
-                return cat;
-            }
-        }
-        return null;
-    }
-     
+    
     public void gerarCodigo(){
         int ultimaPos;
         int ultimoCod = 0;

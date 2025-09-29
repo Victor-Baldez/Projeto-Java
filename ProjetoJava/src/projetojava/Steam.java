@@ -17,7 +17,7 @@ public class Steam {
         Jogo jogo = new Jogo();
         
         do{
-            System.out.println("- Aqui estao as opcoes do desenvolvedor:");
+            System.out.println("- Bem Vindo -\n");
             System.out.println("1 - Cadastrar categoria: ");
             System.out.println("2 - Cadastrar Jogos: ");
             System.out.println("<------------->");
