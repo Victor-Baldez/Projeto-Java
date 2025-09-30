@@ -34,9 +34,13 @@ public class Steam {
             categoria.cadastrarCategoria();
             Categoria.categorias.add(categoria);
         }else if(op == 2){
-            jogo = new Jogo();
-            jogo.cadastrarJogo();
-            Jogo.listaJogos.add(jogo);
+            if(Categoria.categorias.isEmpty()){ //bug nessa validacao
+                System.out.println("cadastre uma categoria primeiro!!!");
+            }else{
+                jogo = new Jogo();
+                jogo.cadastrarJogo();
+                Jogo.listaJogos.add(jogo);
+            }
         }else if(op == 3){
             categoria.listarCategorias();
         }   

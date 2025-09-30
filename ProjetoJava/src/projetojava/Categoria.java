@@ -37,12 +37,12 @@ public class Categoria {
     }
     
     public void listarCategorias(){
-    if(categorias.isEmpty()){
+    if(Categoria.categorias.isEmpty()){
         System.out.println("Nenhuma categoria cadastrada!");
     }else{
         System.out.println("Categorias cadastradas:");
-        for(int i = 0; i < categorias.size(); i++){
-            Categoria cat = categorias.get(i);
+        for(int i = 0; i < Categoria.categorias.size(); i++){
+            Categoria cat = Categoria.categorias.get(i);
             System.out.println("Codigo: " + cat.getCodigo() + " - Nome: " + cat.getNome());
         }
     }
