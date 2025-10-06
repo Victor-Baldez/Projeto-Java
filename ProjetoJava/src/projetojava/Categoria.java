@@ -41,7 +41,7 @@ public class Categoria {
         System.out.println("Nenhuma categoria cadastrada!");
     }else{
         System.out.println("Categorias cadastradas:");
-        for(int i = 0; i < Categoria.categorias.size(); i++){
+        for(int i = 0; i <= Categoria.categorias.size(); i++){
             Categoria cat = Categoria.categorias.get(i);
             System.out.println("Codigo: " + cat.getCodigo() + " - Nome: " + cat.getNome());
         }
@@ -51,7 +51,7 @@ public class Categoria {
     public void gerarCodigo(){
         int ultimaPos;
         int ultimoCod = 0;
-        if (categorias.size() == 0){
+        if (categorias.isEmpty()){
             ultimaPos = 0;
         }else{
             ultimaPos = categorias.size() - 1;
