@@ -1,5 +1,5 @@
 
-package projetojava;
+package classes;
 
 
 public class Usuario {

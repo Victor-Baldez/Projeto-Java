@@ -1,5 +1,5 @@
 
-package projetojava;
+package classes;
 import java.util.Scanner;
 
 public class Steam {
