@@ -29,14 +29,14 @@ public class TelaPrincipal extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        btnLoja = new javax.swing.JButton();
+        btnBiblioteca = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jButton1.setText("LOJA");
+        btnLoja.setText("LOJA");
 
-        jButton2.setText("BIBLIOTECA");
+        btnBiblioteca.setText("BIBLIOTECA");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -44,9 +44,9 @@ public class TelaPrincipal extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(20, 20, 20)
-                .addComponent(jButton1)
+                .addComponent(btnLoja)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton2)
+                .addComponent(btnBiblioteca)
                 .addContainerGap(591, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -54,8 +54,8 @@ public class TelaPrincipal extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(15, 15, 15)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1)
-                    .addComponent(jButton2))
+                    .addComponent(btnLoja)
+                    .addComponent(btnBiblioteca))
                 .addContainerGap(461, Short.MAX_VALUE))
         );
 
@@ -103,8 +103,8 @@ public class TelaPrincipal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
+    private javax.swing.JButton btnBiblioteca;
+    private javax.swing.JButton btnLoja;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 }
