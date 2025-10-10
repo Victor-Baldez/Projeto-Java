@@ -4,6 +4,7 @@
  */
 package interfaces;
 
+import classes.Usuario;
 import javax.swing.JOptionPane;
 
 /**
@@ -145,7 +146,20 @@ public class TelaLogin extends javax.swing.JFrame {
 
     private void btnLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoginActionPerformed
         if(txtLoginEmail.getText().isEmpty() || txtLoginSenha.getText().isEmpty()){
-            JOptionPane.showMessageDialog(null,"Preencha todos os campos!");
+            JOptionPane.showMessageDialog(this,"Preencha todos os campos!");
+        }else{
+            for (int i = 0; i < Usuario.listaUsers.size(); i++) {
+                if(txtLoginEmail.getText() == Usuario.listaUsers.get(i).getEmail() && txtLoginSenha.getText() == Usuario.listaUsers.get(i).getSenha() ){
+                    this.dispose();
+                    Usuario usuario = new Usuario();
+                    TelaPrincipal telaPrincipal = new TelaPrincipal();
+                    telaPrincipal.setVisible(true);
+                    JOptionPane.showMessageDialog(this,"Login efetuado!");
+                }else{
+                    JOptionPane.showMessageDialog(this, "Nenhum Usuário cadastrado");
+                }
+                
+            }
         }
     }//GEN-LAST:event_btnLoginActionPerformed
 

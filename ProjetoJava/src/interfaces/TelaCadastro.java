@@ -4,6 +4,9 @@
  */
 package interfaces;
 
+import classes.Usuario;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Higor
@@ -36,7 +39,7 @@ public class TelaCadastro extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         txtEmail = new javax.swing.JTextField();
         txtNome = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
+        btnCriarConta = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
         txtSenhaConfirma = new javax.swing.JPasswordField();
 
@@ -50,7 +53,12 @@ public class TelaCadastro extends javax.swing.JFrame {
 
         jLabel4.setText("SENHA:");
 
-        jButton1.setText("Criar Conta");
+        btnCriarConta.setText("Criar Conta");
+        btnCriarConta.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCriarContaActionPerformed(evt);
+            }
+        });
 
         jLabel5.setText("CONFIRME A SENHA:");
 
@@ -72,7 +80,7 @@ public class TelaCadastro extends javax.swing.JFrame {
                                 .addComponent(txtSenha))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                                 .addGap(0, 0, Short.MAX_VALUE)
-                                .addComponent(jButton1))
+                                .addComponent(btnCriarConta))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                                 .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -110,7 +118,7 @@ public class TelaCadastro extends javax.swing.JFrame {
                     .addComponent(jLabel5)
                     .addComponent(txtSenhaConfirma, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addComponent(jButton1)
+                .addComponent(btnCriarConta)
                 .addContainerGap(180, Short.MAX_VALUE))
         );
 
@@ -133,6 +141,19 @@ public class TelaCadastro extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnCriarContaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCriarContaActionPerformed
+        String password = String.valueOf(txtSenha.getPassword()); // tem que ser assim pq o get password tranforma em char nao string
+        if(txtNome.getText().isEmpty() || txtEmail.getText().isEmpty()|| password.isEmpty()){
+            JOptionPane.showMessageDialog(null,"Preencha todos os campos!");
+        }else{
+            Usuario usuario = new Usuario();// nao to coseguindo fazer funcionar :(
+            usuario.cadastrar(txtNome.getText(), txtEmail.getText(), password);
+            this.dispose();
+            TelaLogin telaLogin = new TelaLogin();
+            telaLogin.setVisible(true);
+        }
+    }//GEN-LAST:event_btnCriarContaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -160,7 +181,7 @@ public class TelaCadastro extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton btnCriarConta;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
