@@ -73,6 +73,9 @@ public class Jogo {
         this.categoria = categoria;
     }
     
+    public void venderJogo(){
+    
+    }
     
 
     public void cadastrarJogo(){

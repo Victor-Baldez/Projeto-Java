@@ -5,13 +5,12 @@ import java.util.ArrayList;
 
 
 public class Usuario {
-    
+     private ArrayList<Jogo> jogosComprados = new ArrayList<>();
      public static ArrayList <Usuario> listaUsers = new ArrayList<>();
      private int id;
      private String nome;
      private String email;
      private String senha;
-     private double carteira;
 
     public int getId() {
         return id;
@@ -45,13 +44,6 @@ public class Usuario {
         this.senha = senha;
     }
     
-    public double getCarteira() {
-        return carteira;
-    }
-
-    public void setCarteira(double carteira) {
-        this.carteira = carteira;
-    }
     
    public void cadastrar(String nome,String email,String senha){
        this.setNome(nome);
