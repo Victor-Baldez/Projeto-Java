@@ -11,14 +11,14 @@ import javax.swing.JOptionPane;
  *
  * @author Higor
  */
-public class TelaCadastro extends javax.swing.JFrame {
+public class TelaCadastroConta extends javax.swing.JFrame {
     
-    private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(TelaCadastro.class.getName());
+    private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(TelaCadastroConta.class.getName());
 
     /**
      * Creates new form TelaCadastro
      */
-    public TelaCadastro() {
+    public TelaCadastroConta() {
         initComponents();
     }
 
@@ -177,7 +177,7 @@ public class TelaCadastro extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(() -> new TelaCadastro().setVisible(true));
+        java.awt.EventQueue.invokeLater(() -> new TelaCadastroConta().setVisible(true));
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
