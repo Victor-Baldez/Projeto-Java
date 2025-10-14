@@ -10,10 +10,6 @@ Projeto desenvolvido como parte da disciplina de Programação Orientada a Objet
 
 ✅ Sistema de biblioteca com jogos adquiridos
 
-⏳ Registro de avaliações/comentários nos jogos (planejado)
-
-⏳ Sistema de carteiras e saldo virtual (planejado)
-
 ⏳ Interface gráfica (planejado ou em construção)
 
 🛠️ Tecnologias Utilizadas
