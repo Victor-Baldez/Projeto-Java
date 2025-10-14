@@ -5,6 +5,7 @@ import java.util.ArrayList;
 
 
 public class Usuario {
+    
      private ArrayList<Jogo> jogosComprados = new ArrayList<>();
      public static ArrayList <Usuario> listaUsers = new ArrayList<>();
      private int id;
