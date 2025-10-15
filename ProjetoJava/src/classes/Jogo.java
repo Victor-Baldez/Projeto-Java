@@ -1,8 +1,8 @@
 package classes;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.Date;
-import java.util.Scanner;
+
 
 
 public class Jogo {
@@ -12,7 +12,7 @@ public class Jogo {
     private int id;
     private String nome;
     private double preco;
-    private Date dataLancamento;
+    private LocalDate dataLancamento;
     private String desenvolvedora;
     private Categoria categoria;
 
@@ -40,11 +40,11 @@ public class Jogo {
         this.preco = preco;
     }
 
-    public Date getDataLancamento() {
+    public LocalDate getDataLancamento() {
         return dataLancamento;
     }
 
-    public void setDataLancamento(Date dataLancamento) {
+    public void setDataLancamento(LocalDate dataLancamento) {
         this.dataLancamento = dataLancamento;
     }
 
