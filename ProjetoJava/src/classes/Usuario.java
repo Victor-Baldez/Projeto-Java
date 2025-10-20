@@ -50,7 +50,6 @@ public class Usuario {
        this.setNome(nome);
        this.setEmail(email);
        this.setSenha(senha);
-       Usuario.listaUsers.add(this);
    } 
        
     
