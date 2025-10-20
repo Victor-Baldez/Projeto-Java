@@ -2,7 +2,7 @@
 package classes;
 import java.util.Scanner;
 import interfaces.TelaLogin;
-public class Steam {
+public class GameStore {
 
     public static void main(String[] args) {
        TelaLogin telaLogin = new TelaLogin();
