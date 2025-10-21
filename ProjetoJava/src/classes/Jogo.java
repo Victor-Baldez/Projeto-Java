@@ -69,13 +69,13 @@ public class Jogo {
     }
     
     public void cadastrarJogo(String nome, double preco, LocalDate data, String desenvolvedora, String categoria){
+        gerarId();
         setNome(nome);
         setPreco(preco);
         setDataLancamento(data);
         setDesenvolvedora(desenvolvedora);
         setCategoria(categoria);
-        Jogo.listaJogos.add(this);
-    }// Higor é top kkkkk
+    }
     
 
 

@@ -1,6 +1,5 @@
 
 package classes;
-import java.util.Scanner;
 import interfaces.TelaLogin;
 public class GameStore {
 

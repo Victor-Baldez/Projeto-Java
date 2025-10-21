@@ -6,6 +6,7 @@ package interfaces;
 
 import javax.swing.JOptionPane;
 import classes.Jogo;
+import java.time.LocalDate;
 
 
 /**
@@ -164,7 +165,8 @@ public class TelaCadastroJogo extends javax.swing.JFrame {
              JOptionPane.showMessageDialog(null,"Preencha todos os campos!");
         }else{
             Jogo jogo = new Jogo();
-            
+            jogo.cadastrarJogo(txtNome.getText(),Double.parseDouble( txtPreco.getText()),LocalDate.parse(txtData.getText()),txtDesenvolvedora.getText(), txtCategoria.getText());
+            Jogo.listaJogos.add(jogo);
         }
     }//GEN-LAST:event_btnCadastrarJogoActionPerformed
 
