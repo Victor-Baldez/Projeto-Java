@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
 package interfaces;
 
 import classes.Usuario;
@@ -29,9 +25,9 @@ public class TelaLogin extends javax.swing.JFrame {
         txtLoginEmail = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        btnCriarConta = new javax.swing.JButton();
         btnLogin = new javax.swing.JButton();
         txtLoginSenha = new javax.swing.JPasswordField();
+        btnCriarConta = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -52,13 +48,6 @@ public class TelaLogin extends javax.swing.JFrame {
 
         jLabel4.setText("Não tem uma conta?");
 
-        btnCriarConta.setText("Crie uma conta");
-        btnCriarConta.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnCriarContaActionPerformed(evt);
-            }
-        });
-
         btnLogin.setText("Entrar");
         btnLogin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -66,7 +55,12 @@ public class TelaLogin extends javax.swing.JFrame {
             }
         });
 
-        txtLoginSenha.setText("jPasswordField1");
+        btnCriarConta.setText("Criar Conta");
+        btnCriarConta.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCriarContaActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -85,19 +79,20 @@ public class TelaLogin extends javax.swing.JFrame {
                         .addComponent(txtLoginEmail)))
                 .addGap(29, 29, 29))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(128, Short.MAX_VALUE)
+                .addContainerGap(137, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(lblLoginImg, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(124, 124, 124))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addComponent(btnLogin)
                         .addGap(149, 149, 149))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(btnCriarConta)
-                            .addComponent(jLabel4))
-                        .addGap(132, 132, 132))))
+                        .addComponent(jLabel4)
+                        .addGap(132, 132, 132))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addComponent(lblLoginImg, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(115, 115, 115))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addComponent(btnCriarConta)
+                        .addGap(140, 140, 140))))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -146,28 +141,34 @@ public class TelaLogin extends javax.swing.JFrame {
     }//GEN-LAST:event_txtLoginEmailActionPerformed
 
     private void btnLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoginActionPerformed
-        if(txtLoginEmail.getText().isEmpty() || txtLoginSenha.getText().isEmpty()){
-            JOptionPane.showMessageDialog(this,"Preencha todos os campos!");
-        }else{
-            for (int i = 0; i < Usuario.listaUsers.size(); i++) {
-                if(txtLoginEmail.getText() == Usuario.listaUsers.get(i).getEmail() && txtLoginSenha.getText() == Usuario.listaUsers.get(i).getSenha() ){
-                    this.dispose();
-                    Usuario usuario = new Usuario();
-                    TelaPrincipal telaPrincipal = new TelaPrincipal();
-                    telaPrincipal.setVisible(true);
-                    JOptionPane.showMessageDialog(this,"Login efetuado!");
-                }else{
-                    JOptionPane.showMessageDialog(this, "Nenhum Usuário cadastrado");
-                }
-                
-            }
-        }
-    }//GEN-LAST:event_btnLoginActionPerformed
+        if (txtLoginEmail.getText().isEmpty() || txtLoginSenha.getText().isEmpty()) {
+    JOptionPane.showMessageDialog(this, "Preencha todos os campos!");
+} else {
+    boolean usuarioEncontrado = false;
 
+    for (int i = 0; i < Usuario.listaUsers.size(); i++) {
+        Usuario u = Usuario.listaUsers.get(i);
+
+        if (txtLoginEmail.getText().equals(u.getEmail()) && txtLoginSenha.getText().equals(u.getSenha())) {
+            usuarioEncontrado = true; 
+            this.dispose();             
+            TelaPrincipal telaPrincipal = new TelaPrincipal(u);
+            telaPrincipal.setVisible(true);
+            telaPrincipal.setLocationRelativeTo(null);
+            JOptionPane.showMessageDialog(null, "Login efetuado!");
+            break; 
+    }
+    if (!usuarioEncontrado) {
+        JOptionPane.showMessageDialog(null, "Email ou senha incorretos!");
+    }
+    }   
+    }//GEN-LAST:event_btnLoginActionPerformed
+}
     private void btnCriarContaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCriarContaActionPerformed
         this.dispose();
         TelaCadastroConta telaCadastro = new TelaCadastroConta();
         telaCadastro.setVisible(true);
+        telaCadastro.setLocationRelativeTo(null);
     }//GEN-LAST:event_btnCriarContaActionPerformed
 
     public static void main(String args[]) {
