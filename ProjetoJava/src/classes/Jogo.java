@@ -5,7 +5,7 @@ import java.util.ArrayList;
 
 
 
-public class Jogo {
+public class Jogo { 
     
     
     public static ArrayList<Jogo> listaJogos = new ArrayList<>();
@@ -14,7 +14,7 @@ public class Jogo {
     private double preco;
     private LocalDate dataLancamento;
     private String desenvolvedora;
-    private Categoria categoria;
+    private String categoria;
 
     public int getId() {
         return id;
@@ -56,11 +56,11 @@ public class Jogo {
         this.desenvolvedora = desenvolvedora;
     }
 
-    public Categoria getCategoria() {
+    public String getCategoria() {
         return categoria;
     }
 
-    public void setCategoria(Categoria categoria) {
+    public void setCategoria(String categoria) {
         this.categoria = categoria;
     }
     
@@ -68,9 +68,14 @@ public class Jogo {
     
     }
     
-    public void cadastrarJogo(){
-    
-    }
+    public void cadastrarJogo(String nome, double preco, LocalDate data, String desenvolvedora, String categoria){
+        setNome(nome);
+        setPreco(preco);
+        setDataLancamento(data);
+        setDesenvolvedora(desenvolvedora);
+        setCategoria(categoria);
+        Jogo.listaJogos.add(this);
+    }// Higor é top kkkkk
     
 
 
@@ -82,4 +87,6 @@ public class Jogo {
         }
         setId(ultimoId + 1);
     }
+    
+   
 }    
