@@ -144,6 +144,7 @@ public class TelaCadastroConta extends javax.swing.JFrame {
             this.dispose();
             TelaLogin telaLogin = new TelaLogin();
             telaLogin.setVisible(true);
+            telaLogin.setLocationRelativeTo(null);
         }
     }//GEN-LAST:event_btnCriarContaActionPerformed
 
